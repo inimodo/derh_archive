@@ -1,0 +1,27 @@
+.f_header
+{
+  float: left;
+  margin: 0;
+  margin-left: 2vw;
+  color: White;
+  width: 90%;
+  font-family: "Helvetica";
+}
+
+.f_image
+{
+  float: left;
+  margin: 0px;
+  height: 20vh;
+  margin-left: 2vw;
+  margin-top: 2vw;
+}
+
+.f_video
+{
+  float: left;
+  margin: 0px;
+  height: 20vh;
+  margin-left: 2vw;
+  margin-top: 2vw;
+}
