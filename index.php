@@ -4,6 +4,8 @@
     <link href="css/user.css" rel="stylesheet" type="text/css">
     <link href="css/archive.css" rel="stylesheet" type="text/css">
     <link href="css/fileviewer.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="js/fileviewer.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Archive</title>
   </head>
   <body>
@@ -22,6 +24,7 @@
     }
 
     include "fileviewer.php";
+    echo "asdasdssssssssssss";
      ?>
 
 

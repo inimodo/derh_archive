@@ -1,5 +1,6 @@
 <?php
-$folders = scandir("./dynamic_content");
+echo "SCHEIASDASd";
+
 
 function getFileType($file)// 0=Invalid 1=Picture 2=Video
 {
@@ -14,25 +15,47 @@ function getFileType($file)// 0=Invalid 1=Picture 2=Video
   return 0;
 }
 
+
+
+$folders = scandir("./dynamic_content");
 for ($index=2; $index < count($folders); $index++)
 {
-  echo '<h1 class="f_header">'.$folders[$index].'</h1> <div class="f_folder" id="'.$folders[$index].'">';
   $imgp = "./dynamic_content/".$folders[$index]."/";
+  $cols = array("","","");
   $files = scandir($imgp);
+
+  echo '<div class="f_folder_header" onclick="openFolder('.$index.')">
+          <h1 class="f_header_icon"><i class="fa fa-folder" id="folderico'.$index.'"></i></h1>
+          <h1 class="f_header_text">'.$folders[$index].'</h1>
+          <h1 class="f_header_text" style="color:gray;">('.(count($files)-2).' Datein)</h1>
+        </div>
+        <div class="f_folder" style="display:none;" id="folder'.$index.'">';
+
   for ($find=0; $find < count($files) ; $find++)
   {
+    $colmn = $find%3;
+    $file = $imgp.$files[$find];
     $ftype = getFileType($files[$find]);
+
     if($ftype == 0) continue;
+
+    $cols[$colmn] .= '<div class="f_content_box">';
+
     if($ftype == 1)
     {
-      echo '<img class="f_image" src="'.$imgp.$files[$find].'">';
+      $cols[$colmn]  .= '<img class="f_content" src="'.$file.'">';
     }
     if($ftype == 2)
     {
-      echo '<video class="f_image" controls>
-         <source src="'.$imgp.$files[$find].'" type="video/mp4">
+      $cols[$colmn]  .= '<video class="f_content"  controls>
+         <source src="'.$file.'" type="video/mp4">
       </video>';
     }
+
+    $cols[$colmn]  .= "</div>";
+  }
+  for ($col=0; $col < count($cols); $col++) {
+    echo '<div class="f_colmn">'.$cols[$col]."</div>";
   }
   echo "</div>";
 }

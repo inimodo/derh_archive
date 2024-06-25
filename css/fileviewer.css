@@ -1,27 +1,49 @@
-.f_header
+.f_header_text
 {
-  float: left;
   margin: 0;
-  margin-left: 2vw;
+  margin-left: 3vw;
+  float: left;
   color: White;
-  width: 90%;
+  font-size: 6vw;
   font-family: "Helvetica";
 }
-
-.f_image
+.f_header_icon
+{
+  margin: 0;
+  margin-left: 1vw;
+  float: left;
+  color: White;
+  font-size: 6vw;
+}
+.f_folder_header
+{
+  margin: 0;
+  margin-left: 1.66%;
+  float: left;
+  width: 100%;
+}
+.f_folder
+{
+  width: 100%;
+  float: left;
+}
+.f_content
+{
+  width: 100%;
+}
+.f_content_box
 {
   float: left;
+  width: 95%;
   margin: 0px;
-  height: 20vh;
-  margin-left: 2vw;
-  margin-top: 2vw;
+  margin-left: 5%;
+  margin-top: 5%;
+  overflow: hidden;
 }
 
-.f_video
+.f_colmn
 {
   float: left;
+  width: 33.33%;
   margin: 0px;
-  height: 20vh;
-  margin-left: 2vw;
-  margin-top: 2vw;
 }
