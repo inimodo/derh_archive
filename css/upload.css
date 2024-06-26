@@ -1,0 +1,46 @@
+.u_form
+{
+  width: 90%;
+  margin-left: 5%;
+  float: left;
+  color: White;
+  margin-top: 5%;
+  font-family: "Helvetica";
+}
+.u_text
+{
+    float: left;
+    width: 100%;
+    font-size: 5vh;
+}
+
+.u_filesel
+{
+  float: left;
+  width: 100%;
+  font-size: 2vh;
+  margin-bottom: 2vh;
+}
+
+.u_upload
+{
+  float: left;
+  width: 40%;
+  margin-left: 10%;
+  font-size: 2vh;
+  margin-bottom: 2vh;
+}
+
+.u_foldersel
+{
+  float: left;
+  width: 40%;
+  font-size: 2vh;
+  margin-bottom: 2vh;
+}
+
+.u_folder
+{
+  width: 100%;
+  font-size: 1vh;
+}

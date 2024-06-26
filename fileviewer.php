@@ -1,6 +1,4 @@
 <?php
-echo "SCHEIASDASd";
-
 
 function getFileType($file)// 0=Invalid 1=Picture 2=Video
 {
@@ -27,7 +25,7 @@ for ($index=2; $index < count($folders); $index++)
   echo '<div class="f_folder_header" onclick="openFolder('.$index.')">
           <h1 class="f_header_icon"><i class="fa fa-folder" id="folderico'.$index.'"></i></h1>
           <h1 class="f_header_text">'.$folders[$index].'</h1>
-          <h1 class="f_header_text" style="color:gray;">('.(count($files)-2).' Datein)</h1>
+          <h1 class="f_header_text" style="color:gray;">('.(count($files)-2).' Dateien)</h1>
         </div>
         <div class="f_folder" style="display:none;" id="folder'.$index.'">';
 
