@@ -7,6 +7,16 @@
   font-size: 6vw;
   font-family: "Helvetica";
 }
+.f_filecount
+{
+  font-family: "Helvetica";
+  color: gray;
+  font-size: 3vw;
+  margin-top: 1.5vh;
+  margin-right: 1vw;
+  float: right;
+}
+
 .f_header_icon
 {
   margin: 0;
@@ -21,11 +31,13 @@
   margin-left: 1.66%;
   margin-top: 2vh;
   float: left;
-  width: 100%;
+  width: 96%;
+  border-bottom: solid;
+  border-color: gray;
 }
 .f_folder
 {
-  width: 100%;
+  width: 98%;
   float: left;
 }
 .f_content

@@ -39,8 +39,7 @@ $filecount = count($_FILES["files"]["name"]);
 for ($fi=0; $fi < $filecount; $fi++)
 {
   $status = checkIfValid(
-    $_FILES["files"]["name"][$fi],
-    $_FILES["files"]["size"][$fi]
+    $_FILES["files"]["name"][$fi]
   );
   if($status != 0)
   {
@@ -77,14 +76,13 @@ function processFile($fileName,$owner,$folder)
   $newName = "./dynamic_content/".$folder."/".$hash.'.'.$owner.'.'.$type;
   rename($target_file,$newName);
 }
-function checkIfValid($fileName,$fileSize)
+function checkIfValid($fileName)
 {
   include "data.php";
   $target_file = "./upload/".basename($fileName);
   $type = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
   if (file_exists($target_file)) return 1;
-  if ($fileSize > $maxfilesize) return 2;
   if(!in_array($type,$validtype)) return 3;
 
   return 0;

@@ -1,17 +1,17 @@
 .u_form
 {
-  width: 90%;
-  margin-left: 5%;
+  width: 50%;
+  margin-left: 25%;
   float: left;
   color: White;
-  margin-top: 5%;
+  margin-top: 8vh;
   font-family: "Helvetica";
 }
 .u_text
 {
     float: left;
-    width: 100%;
-    font-size: 5vh;
+    font-size: 10vw;
+    margin:0px;
 }
 
 .u_filesel
@@ -19,24 +19,25 @@
   float: left;
   width: 100%;
   font-size: 2vh;
-  margin-bottom: 2vh;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+
 }
 
 .u_upload
 {
   float: left;
-  width: 40%;
-  margin-left: 10%;
+  width: 100%;
   font-size: 2vh;
-  margin-bottom: 2vh;
+  margin-bottom: 7vh;
 }
 
 .u_foldersel
 {
   float: left;
-  width: 40%;
   font-size: 2vh;
-  margin-bottom: 2vh;
+  width: 100%;
+  margin-bottom: 5vh;
 }
 
 .u_folder

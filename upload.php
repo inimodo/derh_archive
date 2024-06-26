@@ -23,10 +23,11 @@ if(!isset($_GET['user']))
   </head>
   <body>
     <form class="u_form"action="filemanager.php?user=<?php echo $user; ?>" method="post" enctype="multipart/form-data">
-      <h1 class="u_text">Datein Hochladen</h1>
+      <h1 class="u_text"> <i style="float: left; color: gray; font-size:16vh;" class="fa fa-upload"></i>Hochladen</h1>
       <input class="u_filesel" type="file" name="files[]" multiple="multiple">
 
-      <h1 class="u_text" style="font-size:2vh;">Bitte wähle den richtigen Ordner aus!</h1>
+      <i style="font-size:10vw;color:gray;" class="fa fa-folder-open"></i>
+      <h1 class="u_text" style="font-size:2.5vw;width: 70%;float:right;color:gray;">Vergiss nicht den richtigen Ordner auszuwählen!</h1>
       <select class="u_foldersel" name="folder" >
         <?php
         $folder = scandir("dynamic_content");
@@ -35,7 +36,12 @@ if(!isset($_GET['user']))
         }
          ?>
       </select>
+      <h1 class="u_text" style="font-size:2.5vw;width: 70%;color:gray;">max. 50MB</h1>
       <input class="u_upload" type="submit" value="Hochladen" name="submit">
+
+      <a class="u_text" style="color:white;font-size: 16vh;" href="index.php?user=<?php echo $user ?>">
+        <i class="fa fa-arrow-left"></i>
+      </a>
     </form>
 
   </body>
