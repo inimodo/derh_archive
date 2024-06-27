@@ -23,7 +23,7 @@ if(!isset($_GET['user']))
   </head>
   <body>
     <form class="u_form"action="filemanager.php?user=<?php echo $user; ?>" method="post" enctype="multipart/form-data">
-      <h1 class="u_text"> <i style="float: left; color: gray; font-size:16vh;" class="fa fa-upload"></i>Hochladen</h1>
+      <h1 class="u_text">Hochladen</h1>
       <input class="u_filesel" type="file" name="files[]" multiple="multiple">
 
       <i style="font-size:10vw;color:gray;" class="fa fa-folder-open"></i>
@@ -36,10 +36,10 @@ if(!isset($_GET['user']))
         }
          ?>
       </select>
-      <h1 class="u_text" style="font-size:2.5vw;width: 70%;color:gray;">max. 50MB</h1>
+      <h1 class="u_text" style="font-size:2.5vw;width: 70%;color:gray;">max. 50MB pro datei</h1>
       <input class="u_upload" type="submit" value="Hochladen" name="submit">
 
-      <a class="u_text" style="color:white;font-size: 16vh;" href="index.php?user=<?php echo $user ?>">
+      <a class="u_navigate" href="index.php?user=<?php echo $user ?>">
         <i class="fa fa-arrow-left"></i>
       </a>
     </form>

@@ -9,6 +9,9 @@
     <title>Hochladen</title>
   </head>
   <body>
+    <div class="u_form" >
+      <h1 class="u_text">Fertig</h1>
+
 <?php
 include "data.php";
 $user = preg_replace('/[^0-9\s]+/u','',$_GET['user']);
@@ -43,7 +46,7 @@ for ($fi=0; $fi < $filecount; $fi++)
   );
   if($status != 0)
   {
-    printStatus($status);
+    printStatus($status,$_FILES["files"]["name"][$fi]);
     continue;
   }
 
@@ -53,7 +56,7 @@ for ($fi=0; $fi < $filecount; $fi++)
   );
   if($status != 0)
   {
-    printStatus($status);
+    printStatus($status,$_FILES["files"]["name"][$fi]);
     continue;
   }
   processFile(
@@ -61,13 +64,36 @@ for ($fi=0; $fi < $filecount; $fi++)
     $usernames[$user],
     $folder
   );
-  printStatus($status);
+  printStatus($status,$_FILES["files"]["name"][$fi]);
 }
 
-function printStatus($status)
+function printStatus($status,$fileName)
 {
-  echo "STATUS:".$status."<br>";
+  $emsg= array(
+    "Erfolgreich hochgeladen.",
+    "Datei bereits im Buffer!",
+    "Ungültiges Dateiformat!",
+    "Fehler beim hochladen!");
+  $icon = array(
+    "fa-check",
+    "fa-file-exclamation",
+    "fa-file-exclamation",
+    "fa-triangle-exclamation"
+  );
+  $color = array(
+    "#00ff00",
+    "#ffca00",
+    "#ffca00",
+    "#ff0000"
+  );
+  $text = $emsg[$status]." Code ".$status;
+  echo '
+  <div class="u_statusbox">
+    <a class="u_statustext"><i style="color:'.$color[$status].';" class="fa '.$icon[$status].'"></i>'.$fileName.'</a>
+    <a class="u_statustext" style="color:gray; margin-top:0;">'.$text.'</a>
+  </div>';
 }
+
 function processFile($fileName,$owner,$folder)
 {
   $target_file = "./upload/".basename($fileName);
@@ -83,7 +109,7 @@ function checkIfValid($fileName)
   $type = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
   if (file_exists($target_file)) return 1;
-  if(!in_array($type,$validtype)) return 3;
+  if(!in_array($type,$validtype)) return 2;
 
   return 0;
 }
@@ -92,9 +118,13 @@ function upload($fileName,$tempFileName)
 {
   $target_file = "./upload/".basename($fileName);
   if (move_uploaded_file($tempFileName, $target_file)) return 0;
-  return 4;
+  return 3;
 }
 
 ?>
-</body>
+      <a class="u_navigate" href="index.php?user=<?php echo $user ?>">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+    </div>
+  </body>
 </html>

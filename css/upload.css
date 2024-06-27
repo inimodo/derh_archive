@@ -1,7 +1,7 @@
 .u_form
 {
-  width: 50%;
-  margin-left: 25%;
+  width:60%;
+  margin-left:20%;
   float: left;
   color: White;
   margin-top: 8vh;
@@ -44,4 +44,32 @@
 {
   width: 100%;
   font-size: 1vh;
+}
+
+.u_navigate
+{
+  float: left;
+  font-size: 10vw;
+  margin:0px;
+  color: white;
+  position: absolute;
+  bottom: 2.5vh;
+  right: 2.5vh;
+}
+
+
+
+.u_statusbox
+{
+  float: left;
+  width: 100%;
+}
+.u_statustext
+{
+  float: left;
+  width: 100%;
+  color: White;
+  margin-top: 1vh;
+  font-family: "Helvetica";
+font-size: 1.8vh;
 }
