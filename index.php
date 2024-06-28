@@ -4,8 +4,10 @@
   <head>
     <meta charset="utf-8">
     <link href="css/user.css" rel="stylesheet" type="text/css">
+    <link href="css/upload.css" rel="stylesheet" type="text/css">
     <link href="css/archive.css" rel="stylesheet" type="text/css">
     <link href="css/header.css" rel="stylesheet" type="text/css">
+    <link href="css/view.css" rel="stylesheet" type="text/css">
     <link href="css/fileviewer.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/svg+xml" href="./icon.svg">
     <script language="javascript" type="text/javascript" src="js/fileviewer.js"></script>
@@ -13,6 +15,15 @@
     <title>Achiv</title>
   </head>
   <body>
+    <div class="v_container" id="view" style="display:none;">
+      <image class="v_content" id="viewImage">
+      <video class="v_content" id="viewVideo" controls>
+         <source viewVideoSrctype="video/mp4">
+      </video>
+      <a class="u_navigate" onclick="closeView()">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+    </div>
     <?php
     include "data.php";
 
@@ -28,13 +39,15 @@
     }
     ?>
 
-    <div class="h_content">
+    <div style="display:block;" class="h_content" id="content">
       <?php
       include "fileviewer.php";
       ?>
     </div>
-    <div class="h_header">
-     <img class="h_user" src="static_content/<?php echo $usernames[$user]; ?>.png">
+    <div style="display:block;" class="h_header" id="header">
+    <a href="index.php">
+     <img  class="h_user" src="static_content/<?php echo $usernames[$user]; ?>.png">
+    </a>
      <a href="upload.php?user=<?php echo $user; ?>">
        <h1 class="h_upload">
          <i class="fa fa-upload"></i>

@@ -1,0 +1,37 @@
+.v_container
+{
+  float: left;
+  width: 100%;
+  background-color: rgba(20,20,20,0.5);
+}
+
+.v_content
+{
+  float: left;
+  width: 90%;
+  margin-top: 5%;
+  margin-left:5%;
+}
+
+.v_htlist
+{
+    background-color: rgb(20,20,20);
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.v_hashtag
+{
+  height: 3vh;
+  float: left;
+}
+
+.v_httext
+{
+  float:left;
+  margin-top: 0.5vh;
+  margin-left: 0.5vh;
+  font-size: 2vh;
+
+}

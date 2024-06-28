@@ -99,8 +99,13 @@ function processFile($fileName,$owner,$folder)
   $target_file = "./upload/".basename($fileName);
   $type = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
   $hash = hash_file('md2', $target_file);
-  $newName = "./dynamic_content/".$folder."/".$hash.'.'.$owner.'.'.$type;
+  $newName = "./dynamic_content/".$folder."/".$hash.'.'.$type;
   rename($target_file,$newName);
+
+  $dataFile = "./dynamic_content/".$folder."/".$hash.'.json';
+  $fhandle = fopen($dataFile, "w");
+  fwrite($fhandle,'["'.strtoupper($owner).'"]');
+  fclose($fhandle);
 }
 function checkIfValid($fileName)
 {
