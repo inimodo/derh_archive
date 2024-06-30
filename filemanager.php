@@ -76,8 +76,8 @@ function printStatus($status,$fileName)
     "Fehler beim hochladen!");
   $icon = array(
     "fa-check",
-    "fa-file-exclamation",
-    "fa-file-exclamation",
+    "fa-file",
+    "fa-file",
     "fa-triangle-exclamation"
   );
   $color = array(
@@ -89,7 +89,9 @@ function printStatus($status,$fileName)
   $text = $emsg[$status]." Code ".$status;
   echo '
   <div class="u_statusbox">
-    <a class="u_statustext"><i style="color:'.$color[$status].';" class="fa '.$icon[$status].'"></i>'.$fileName.'</a>
+    <a class="u_statustext">
+      <i style="color:'.$color[$status].';" class="fa '.$icon[$status].'"></i> '.$fileName.'
+    </a>
     <a class="u_statustext" style="color:gray; margin-top:0;">'.$text.'</a>
   </div>';
 }

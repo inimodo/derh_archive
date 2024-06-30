@@ -11,15 +11,22 @@ function openFolder(folder) {
   }
 }
 
+function navigate(step)
+{
+  document.getElementById("viewVideo").pause();
+  let cid = parseInt(document.getElementById("viewImage").alt) + step;
+  let fhash = document.getElementById(cid+"c").alt;
+  openView(cid,fhash);
+}
 
 function openView(cid,fhash)
 {
+  document.getElementById("viewImage").alt = cid;
   document.getElementById("header").style.display = "none";
   document.getElementById("content").style.display = "none";
   document.getElementById("view").style.display = "block";
 
   let tag = document.getElementById(cid+"c").tagName;
-  console.log(tag);
   if(tag === "IMG")
   {
     let src = document.getElementById(cid+"c").src;
@@ -35,7 +42,7 @@ function openView(cid,fhash)
     document.getElementById("viewVideo").load();
     document.getElementById("viewVideo").play();
 
-    document.getElementById("viewVideoSrc").src = src;
+    document.getElementById("viewVideo").getElementsByTagName('SOURCE')[0].src = src;
     document.getElementById("viewImage").style.display = "none";
     document.getElementById("viewVideo").style.display = "block";
   }

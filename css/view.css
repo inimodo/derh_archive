@@ -7,10 +7,11 @@
 
 .v_content
 {
+  position: relative;
   float: left;
-  width: 90%;
-  margin-top: 5%;
-  margin-left:5%;
+  width: 80%;
+  margin: 10%;
+
 }
 
 .v_htlist
@@ -34,4 +35,24 @@
   margin-left: 0.5vh;
   font-size: 2vh;
 
+}
+
+.v_controller
+{
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.v_navelement
+{
+
+  float: left;
+  z-index: 90;
+}
+.v_navelement
+{
+  position: absolute;
+  width: 50%;
+   height: 100%;
 }
