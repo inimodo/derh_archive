@@ -2,6 +2,7 @@
 {
   width: 100%;
   background-color: #141416;
+  float: left;
 }
 
 .h_user
@@ -24,4 +25,5 @@
 {
   height: 90%;
   overflow-y: scroll;
+  float: left;
 }

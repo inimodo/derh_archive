@@ -15,7 +15,7 @@
     <title>Achiv</title>
   </head>
   <body>
-    <div class="v_container" id="view" style="display:none;">
+    <div class="v_container" id="view" style="display:none;" >
       <div class="v_controller" src="">
         <div class="v_navelement" onclick="navigate(-1)"></div>
         <div class="v_navelement" style="margin-left:50%;" onclick="navigate(+1)"></div>
@@ -43,12 +43,12 @@
     }
     ?>
 
-    <div style="display:block;" class="h_content" id="content">
+    <div  class="h_content" id="content">
       <?php
       include "fileviewer.php";
       ?>
     </div>
-    <div style="display:block;" class="h_header" id="header">
+    <div class="h_header" id="header">
     <a href="index.php">
      <img  class="h_user" src="static_content/<?php echo $usernames[$user]; ?>.png">
     </a>

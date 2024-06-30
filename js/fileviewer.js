@@ -22,15 +22,12 @@ function navigate(step)
 function openView(cid,fhash)
 {
   document.getElementById("viewImage").alt = cid;
-  document.getElementById("header").style.display = "none";
-  document.getElementById("content").style.display = "none";
   document.getElementById("view").style.display = "block";
 
   let tag = document.getElementById(cid+"c").tagName;
   if(tag === "IMG")
   {
-    let src = document.getElementById(cid+"c").src;
-    document.getElementById("viewImage").src = src;
+    document.getElementById("viewImage").src = document.getElementById(cid+"c").src;
     document.getElementById("viewImage").style.display = "block";
     document.getElementById("viewVideo").style.display = "none";
   }
@@ -52,6 +49,4 @@ function closeView()
 {
   document.getElementById("viewVideo").pause();
   document.getElementById("view").style.display = "none";
-  document.getElementById("content").style.display = "block";
-  document.getElementById("header").style.display = "block";
 }
