@@ -24,14 +24,23 @@
            <source viewVideoSrctype="video/mp4">
         </video>
       </div>
+      <a class="v_info" id="info"></a>
+      <div class="v_htlist" id="hashtags" >
+      </div>
       <a class="u_navigate" onclick="closeView()">
         <i class="fa fa-arrow-left"></i>
       </a>
     </div>
     <?php
+    include "cors.php";
     include "data.php";
 
     $user = preg_replace('/[^0-9\s]+/u','',$_GET['user']);
+    $search = preg_replace('/[^A-Za-z\s]+/u','',$_GET['search']);
+    if(!isset($_GET['search']))
+    {
+      $search = "";
+    }
     if(!isset($_GET['user']))
     {
         include "user.php";
@@ -41,6 +50,7 @@
         include "user.php";
         die();
     }
+
     ?>
 
     <div  class="h_content" id="content">
@@ -50,8 +60,22 @@
     </div>
     <div class="h_header" id="header">
     <a href="index.php">
-     <img  class="h_user" src="static_content/<?php echo $usernames[$user]; ?>.png">
+     <img  id="username" class="h_user" alt="<?php echo $usernames[$user]; ?>" src="static_content/<?php echo $usernames[$user]; ?>.png">
     </a>
+
+    <?php
+    if(isset($_GET['search']))
+    {
+      echo '
+      <a href="index.php?user='.$user.'">
+        <h1 class="h_cancelsearch">
+         <i class="fa fa-ban"></i> Suche nach #'.$usernames[$user].' abbrechen.
+        </h1>
+      </a>
+      ';
+    }
+     ?>
+
      <a href="upload.php?user=<?php echo $user; ?>">
        <h1 class="h_upload">
          <i class="fa fa-upload"></i>

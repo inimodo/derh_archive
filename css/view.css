@@ -5,6 +5,7 @@
   background-color: rgba(20,20,20,0.9);
   position: absolute;
   height: 100%;
+  z-index: 80;
 }
 
 .v_content
@@ -13,30 +14,35 @@
   float: left;
   width: 80%;
   margin: 10%;
-
+  margin-bottom: 0;
 }
 
 .v_htlist
 {
-    background-color: rgb(20,20,20);
     float: left;
-    width: 90%;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .v_hashtag
 {
-  height: 3vh;
+  background-color: rgb(20,20,20);
+  border-radius: 1vh;
+  border-color: White;
+  border-width: 0.1vh;
+  height: 3.4vh;
   float: left;
 }
 
 .v_httext
 {
-  float:left;
+  color: white;
+  float: left;
   margin-top: 0.5vh;
-  margin-left: 0.5vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+  font-family: "Helvetica";
   font-size: 2vh;
-
 }
 
 .v_controller
@@ -57,4 +63,17 @@
   position: absolute;
   width: 50%;
    height: 100%;
+}
+
+.v_info
+{
+  float: left;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  float: left;
+  font-family: "Helvetica";
+  font-size: 1.5vh;
+  color:gray;
+  margin-bottom: 2%;
 }

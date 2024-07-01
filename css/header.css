@@ -27,3 +27,14 @@
   overflow-y: scroll;
   float: left;
 }
+
+.h_cancelsearch
+{
+  float: left;
+  /* margin: 2.5vh; */
+  margin-top: 3.5vh;
+  height: 5vh;
+  color: White;
+  font-size: 3.5vw;
+  font-family: "Helvetica";
+}

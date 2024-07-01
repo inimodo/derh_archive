@@ -104,9 +104,10 @@ function processFile($fileName,$owner,$folder)
   $newName = "./dynamic_content/".$folder."/".$hash.'.'.$type;
   rename($target_file,$newName);
 
+  $cdate = date("d.m.Y",filectime($newName));
   $dataFile = "./dynamic_content/".$folder."/".$hash.'.json';
   $fhandle = fopen($dataFile, "w");
-  fwrite($fhandle,'["'.strtoupper($owner).'"]');
+  fwrite($fhandle,'["'.$cdate.'","'.strtoupper($owner).'"]');
   fclose($fhandle);
 }
 function checkIfValid($fileName)
