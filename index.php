@@ -1,4 +1,15 @@
-
+<?php
+include "data.php";
+$token = preg_replace('/[^A-Za-z0-9\s]+/u','',$_GET['token']);
+if(!isset($_GET['token']))
+{
+  die("No Token!");
+}
+if($privateToken != $token)
+{
+  die("Invalid Token");
+}
+ ?>
 
 <html lang="de" dir="ltr">
   <head>
@@ -32,8 +43,6 @@
       </a>
     </div>
     <?php
-    include "cors.php";
-    include "data.php";
 
     $user = preg_replace('/[^0-9\s]+/u','',$_GET['user']);
     $search = preg_replace('/[^A-Za-z\s]+/u','',$_GET['search']);
@@ -67,7 +76,7 @@
     if(isset($_GET['search']))
     {
       echo '
-      <a href="index.php?user='.$user.'">
+      <a href="index.php?user='.$user.'&token='.$token.'">
         <h1 class="h_cancelsearch">
          <i class="fa fa-ban"></i> Suche nach #'.$usernames[$user].' abbrechen.
         </h1>
@@ -76,7 +85,7 @@
     }
      ?>
 
-     <a href="upload.php?user=<?php echo $user; ?>">
+     <a href="upload.php?user=<?php echo $user; ?>&token=<?php echo $token; ?>">
        <h1 class="h_upload">
          <i class="fa fa-upload"></i>
        </h1>

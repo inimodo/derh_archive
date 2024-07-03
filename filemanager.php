@@ -1,3 +1,26 @@
+<?php
+include "data.php";
+$token = preg_replace('/[^A-Za-z0-9\s]+/u','',$_GET['token']);
+if(!isset($_GET['token']))
+{
+  die("No Token!");
+}
+if($privateToken != $token)
+{
+  die("Invalid Token");
+}
+
+$user = preg_replace('/[^0-9\s]+/u','',$_GET['user']);
+if(!isset($_GET['user']))
+{
+    header('Location: index.php');
+    die();
+}else if($user < 0 || $user >= count($usernames))
+{
+    header('Location: index.php');
+    die();
+}
+ ?>
 <html lang="de" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -13,17 +36,6 @@
       <h1 class="u_text">Fertig</h1>
 
 <?php
-include "data.php";
-$user = preg_replace('/[^0-9\s]+/u','',$_GET['user']);
-if(!isset($_GET['user']))
-{
-    header('Location: index.php');
-    die();
-}else if($user < 0 || $user >= count($usernames))
-{
-    header('Location: index.php');
-    die();
-}
 
 if(!isset($_POST["submit"]) || !isset($_POST["folder"]))
 {
@@ -117,7 +129,7 @@ function checkIfValid($fileName)
   $type = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
   if (file_exists($target_file)) return 1;
-  if(!in_array($type,$validtype)) return 2;
+  if(!in_array($type,$validImageType) && !in_array($type,$validVideoType)) return 2;
 
   return 0;
 }
@@ -130,7 +142,7 @@ function upload($fileName,$tempFileName)
 }
 
 ?>
-      <a class="u_navigate" href="index.php?user=<?php echo $user ?>">
+      <a class="u_navigate" href="index.php?user=<?php echo $user ?>&token=<?php echo $token; ?>">
         <i class="fa fa-arrow-left"></i>
       </a>
     </div>

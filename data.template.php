@@ -1,4 +1,6 @@
 <?php
 $usernames = array('','','','','','','');
-$validtype = array('jpg','jpeg','png','mp4','mov');
+$validImageType = array('jpg','jpeg','png');
+$validVideoType = array('mp4','mov','wmv','wav');
+$token = ""; 
  ?>

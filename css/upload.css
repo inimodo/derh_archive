@@ -57,6 +57,14 @@
   right: 2.5vh;
 }
 
+.u_infotext
+{
+  float: left;
+  margin:0px;
+  font-size:2.5vw;
+  width: 70%;
+  color:White;
+}
 
 
 .u_statusbox

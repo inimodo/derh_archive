@@ -1,14 +1,11 @@
 <?php
 function getFileType($file)// 0=Invalid 1=Picture 2=Video
 {
-  $picf = array("png","PNG","JPG","jpg","JPEG","jpeg");
-  $videof = array('mp4','mov','wmv','wav');
+  include "data.php";
+  $type = strtolower(pathinfo($file,PATHINFO_EXTENSION));
 
-  $splitted = explode(".",$file);
-  $fileend = $splitted[count($splitted)-1];
-
-  if(in_array($fileend,$picf)) return 1;
-  if(in_array($fileend,$videof)) return 2;
+  if(in_array($type,$validImageType)) return 1;
+  if(in_array($fileend,$validVideoType)) return 2;
   return 0;
 }
 
