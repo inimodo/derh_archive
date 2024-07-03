@@ -3,9 +3,8 @@ function getFileType($file)// 0=Invalid 1=Picture 2=Video
 {
   include "data.php";
   $type = strtolower(pathinfo($file,PATHINFO_EXTENSION));
-
   if(in_array($type,$validImageType)) return 1;
-  if(in_array($fileend,$validVideoType)) return 2;
+  if(in_array($type,$validVideoType)) return 2;
   return 0;
 }
 
@@ -58,6 +57,7 @@ for ($index=2; $index < count($folders); $index++)
           onplay=openView('.$id.',"'.$folderfhash.'")
           controls>
             <source src="'.$file.'" type="video/mp4" >
+            <source src="'.$file.'" type="video/mov" >
       </video>';
     }
 
@@ -65,10 +65,11 @@ for ($index=2; $index < count($folders); $index++)
     $id++;
   }
 
+  $properName = str_replace("_"," ",explode(".",$folders[$index])[1]);
   echo '<div class="f_folder_header" onclick="openFolder('.$index.')">
           <h1 class="f_header_icon"><i class="fa fa-folder" id="folderico'.$index.'"></i></h1>
-          <h1 class="f_header_text">'.$folders[$index].'</h1>
-          <h1 class="f_filecount" >'.$colmnindex.' Dateien</h1>
+          <h1 class="f_header_text">'.$properName.'</h1>
+          <h1 class="f_filecount" >'.$colmnindex.' <i class="fa fa-file"></i></h1>
         </div>
         <div class="f_folder" style="display:none;" id="folder'.$index.'">';
   for ($col=0; $col < count($cols); $col++) {

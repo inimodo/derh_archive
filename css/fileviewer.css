@@ -4,7 +4,7 @@
   margin-left: 3vw;
   float: left;
   color: White;
-  font-size: 6vw;
+  font-size: 5vw;
   font-family: "Helvetica";
 }
 .f_filecount
@@ -12,7 +12,7 @@
   font-family: "Helvetica";
   color: gray;
   font-size: 3vw;
-  margin-top: 1.5vh;
+  margin-top: 0.5vh;
   margin-right: 1vw;
   float: right;
 }
@@ -29,7 +29,7 @@
 {
   margin: 0;
   margin-left: 1.66%;
-  margin-top: 2vh;
+  margin-top: 1vh;
   float: left;
   width: 96%;
 

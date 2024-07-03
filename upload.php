@@ -37,19 +37,19 @@ if(!isset($_GET['user']))
       <input class="u_filesel" type="file" name="files[]" multiple="multiple">
 
       <i style="font-size:10vw;color:gray;" class="fa fa-folder-open"></i>
-      <h1 class="u_infotext" style="color:gray;">Vergiss nicht den richtigen Ordner auszuwählen!</h1>
       <select onclick="updateUpload()" class="u_foldersel" name="folder" >
         <?php
-        $folder = scandir("dynamic_content");
-        for ($index=2; $index < count($folder); $index++) {
-          echo '<option  class="u_folder" value="'.$index.'">'.$folder[$index].'</option>';
+        $folders = scandir("dynamic_content");
+        for ($index=2; $index < count($folders); $index++) {
+          $properName = str_replace("_"," ",explode(".",$folders[$index])[1]);
+          echo '<option  class="u_folder" value="'.$index.'">'.$properName.'</option>';
         }
          ?>
          <option class="u_folder" selected="selected" value="-1"> Kein Ordner ausgewählt</option>
       </select>
-      <h1 class="u_infotext ">max. 50MB pro datei</h1>
+      <h1 class="u_infotext ">max. 50MB und max. 20 Dateien</h1>
       <input class="u_upload"onclick="showLoadingscreen()" id="upload" type="submit" value="Hochladen" name="submit" disabled>
-
+      <h1 class="u_infotext " style ="color:gray">Tipp: Lade Videos und Fotos getrennt hoch! Noch besser ist Videos einzeln hochzuladen, da per upload nur 50MB hochgeladen werden können.</h1>
       <a class="u_navigate" href="index.php?user=<?php echo $user ?>&token=<?php echo $token; ?>">
         <i class="fa fa-arrow-left"></i>
       </a>
@@ -58,7 +58,7 @@ if(!isset($_GET['user']))
     <div id="loading" style="display:none;" class="u_form">
       <i style="float:left; font-size:10vw;color:white;" class="fa fa-cog fa-spin"></i>
       <h1 class="u_text">Hochladen</h1>
-      <h1 class="u_infotext" >Bitte habe Gedult! Das Hochladen kann bei vielen oder großen Dateien lange dauern. </h1>
+      <h1 class="u_infotext" >Bitte habe Gedult! Das kann nun etwas dauern. Der Upload gilt nur als erfolgreich, wenn die "Fertig" Seite sich öffnet. Wenn nicht, hast du mehr als 50MB hochgeladen. </h1>
     </div>
 
   </body>
