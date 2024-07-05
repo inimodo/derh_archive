@@ -5,7 +5,6 @@
   margin-left: 17.5%;
   margin-top: 5vh;
 }
-
 .u_selbutton
 {
   float: left;
@@ -15,7 +14,6 @@
   box-shadow: 7px 7px 20px 7px rgb(255 255 255 / 17%);
   border-radius: 20px;
 }
-
 .u_selbutton_link
 {
   width: 0px;

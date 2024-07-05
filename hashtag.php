@@ -1,6 +1,8 @@
 <?php
-include "cors.php";
-include "data.php";
+define("METHOD","POST");
+include "php/cors.php";
+include "php/data.php";
+include "php/ctoken.php";
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 $fhash = explode(".",preg_replace('/[^0-9A-Za-z.\s]+/u','',$_POST['fhash']));
@@ -29,7 +31,7 @@ if($op == 1)
   fclose($file);
 
   $file = fopen($hashpath.".json","w");
-  array_push($json,$usernames[intval($user)]);
+  array_push($json,USERS[intval($user)]);
   fwrite($file,json_encode($json));
   fclose($file);
   echo json_encode($json);

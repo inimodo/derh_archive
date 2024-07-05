@@ -1,14 +1,7 @@
 <?php
-include "data.php";
-$token = preg_replace('/[^A-Za-z0-9\s]+/u','',$_GET['token']);
-if(!isset($_GET['token']))
-{
-  die("No Token!");
-}
-if($privateToken != $token)
-{
-  die("Invalid Token");
-}
+define("METHOD","GET");
+include("php/data.php");
+include("php/ctoken.php");
  ?>
 
 <html lang="de" dir="ltr">
@@ -52,11 +45,11 @@ if($privateToken != $token)
     }
     if(!isset($_GET['user']))
     {
-        include "user.php";
+        include("user.php");
         die();
-    }else if($user < 0 || $user >= count($usernames))
+    }else if($user < 0 || $user >= count(USERS))
     {
-        include "user.php";
+        include("user.php");
         die();
     }
 
@@ -64,28 +57,28 @@ if($privateToken != $token)
 
     <div  class="h_content" id="content">
       <?php
-      include "fileviewer.php";
+      include("fileviewer.php");
       ?>
     </div>
     <div class="h_header" id="header">
     <a href="index.php">
-     <img  id="username" class="h_user" alt="<?php echo $usernames[$user]; ?>" src="static_content/<?php echo $usernames[$user]; ?>.png">
+     <img  id="username" class="h_user" alt="<?php echo USERS[$user]; ?>" src="static_content/<?php echo USERS[$user]; ?>.png">
     </a>
 
     <?php
     if(isset($_GET['search']))
     {
       echo '
-      <a href="index.php?user='.$user.'&token='.$token.'">
+      <a href="index.php?user='.$user.'&token='.TOKEN.'">
         <h1 class="h_cancelsearch">
-         <i class="fa fa-ban"></i> Suche nach #'.$usernames[$user].' abbrechen.
+         <i class="fa fa-ban"></i> Suche nach #'.USERS[$user].' abbrechen.
         </h1>
       </a>
       ';
     }
      ?>
 
-     <a href="upload.php?user=<?php echo $user; ?>&token=<?php echo $token; ?>">
+     <a href="upload.php?user=<?php echo $user; ?>&token=<?php echo TOKEN; ?>">
        <h1 class="h_upload">
          <i class="fa fa-upload"></i>
        </h1>

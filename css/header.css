@@ -4,7 +4,6 @@
   background-color: #141416;
   float: left;
 }
-
 .h_user
 {
   float: left;
@@ -20,14 +19,12 @@
   color: White;
   font-size: 5vh;
 }
-
 .h_content
 {
   height: 90%;
   overflow-y: scroll;
   float: left;
 }
-
 .h_cancelsearch
 {
   float: left;

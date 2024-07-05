@@ -1,21 +1,14 @@
 <?php
-include "data.php";
-$token = preg_replace('/[^A-Za-z0-9\s]+/u','',$_GET['token']);
-if(!isset($_GET['token']))
-{
-  die("No Token!");
-}
-if($privateToken != $token)
-{
-  die("Invalid Token");
-}
+define("METHOD","GET");
+include "php/data.php";
+include("php/ctoken.php");
 
 $user = preg_replace('/[^0-9\s]+/u','',$_GET['user']);
 if(!isset($_GET['user']))
 {
     header('Location: index.php');
     die();
-}else if($user < 0 || $user >= count($usernames))
+}else if($user < 0 || $user >= count(USERS))
 {
     header('Location: index.php');
     die();
@@ -32,7 +25,7 @@ if(!isset($_GET['user']))
     <title>Hochladen</title>
   </head>
   <body>
-    <form id="form" class="u_form" action="filemanager.php?user=<?php echo $user; ?>&token=<?php echo $token; ?>" method="post" enctype="multipart/form-data">
+    <form id="form" class="u_form" action="filemanager.php?user=<?php echo $user; ?>&token=<?php echo TOKEN; ?>" method="post" enctype="multipart/form-data">
       <h1 class="u_text">Hochladen</h1>
       <input class="u_filesel" type="file" name="files[]" multiple="multiple">
 
@@ -50,7 +43,7 @@ if(!isset($_GET['user']))
       <h1 class="u_infotext ">max. 50MB und max. 20 Dateien</h1>
       <input class="u_upload"onclick="showLoadingscreen()" id="upload" type="submit" value="Hochladen" name="submit" disabled>
       <h1 class="u_infotext " style ="color:gray">Tipp: Lade Videos und Fotos getrennt hoch! Noch besser ist Videos einzeln hochzuladen, da per upload nur 50MB hochgeladen werden können.</h1>
-      <a class="u_navigate" href="index.php?user=<?php echo $user ?>&token=<?php echo $token; ?>">
+      <a class="u_navigate" href="index.php?user=<?php echo $user ?>&token=<?php echo TOKEN; ?>">
         <i class="fa fa-arrow-left"></i>
       </a>
     </form>

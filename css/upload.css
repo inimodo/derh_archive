@@ -13,7 +13,6 @@
     font-size: 10vw;
     margin:0px;
 }
-
 .u_filesel
 {
   float: left;
@@ -23,7 +22,6 @@
   margin-top: 5vh;
 
 }
-
 .u_upload
 {
   float: left;
@@ -31,7 +29,6 @@
   font-size: 2vh;
   margin-bottom: 2vh;
 }
-
 .u_foldersel
 {
   float: left;
@@ -39,13 +36,11 @@
   width: 100%;
   margin-bottom: 5vh;
 }
-
 .u_folder
 {
   width: 100%;
   font-size: 1vh;
 }
-
 .u_navigate
 {
   float: left;
@@ -56,7 +51,6 @@
   bottom: 2.5vh;
   right: 2.5vh;
 }
-
 .u_infotext
 {
   float: left;
@@ -65,8 +59,6 @@
   width: 70%;
   color:White;
 }
-
-
 .u_statusbox
 {
   float: left;
@@ -79,5 +71,5 @@
   color: White;
   margin-top: 1vh;
   font-family: "Helvetica";
-font-size: 1.8vh;
+  font-size: 1.8vh;
 }

@@ -1,4 +1,5 @@
-function openFolder(folder) {
+function openFolder(folder)
+{
   let displ = document.getElementById("folder"+folder).style.display;
   if(displ == "none")
   {
@@ -22,7 +23,6 @@ function navigate(step)
 function openView(cid,fhash)
 {
   updateHashtags(fhash);
-
   document.getElementById("viewImage").alt = cid;
   document.getElementById("view").style.display = "block";
   let tag = document.getElementById(cid+"c").tagName;
@@ -64,7 +64,7 @@ function buildHeader(content)
 function updateHashtags(fhash)
 {
   const url = new URLSearchParams(window.location.search);
-  var header = buildHeader({'op':0,'fhash':fhash });
+  var header = buildHeader({'op':0,'fhash':fhash ,'token':url.get("token")});
   fetch("https://ini02.xyz/derh/hashtag.php",header)
     .then((response) => response.json()).then((data) =>{
       document.getElementById("hashtags").innerHtml='';
@@ -85,7 +85,7 @@ function updateHashtags(fhash)
         a.className="v_httext";
         a.appendChild(i);
         a.innerHTML  += data[index];
-        a.href = "index.php?user="+url.get("user")+"&search="+data[index];
+        a.href = "index.php?user="+url.get("user")+"&search="+data[index]+"&token="+url.get("token");
         document.getElementById("hashtags").appendChild(div).appendChild(a);
       }
       let username = document.getElementById("username").alt;
@@ -111,12 +111,13 @@ function updateHashtags(fhash)
 function addUserHashtag(fhash)
 {
   const url = new URLSearchParams(window.location.search);
-  var header = buildHeader({'op':1,'fhash':fhash , 'user':url.get("user")});
+  var header = buildHeader({'op':1,'fhash':fhash , 'user':url.get("user"),'token':url.get("token")});
   fetch("https://ini02.xyz/derh/hashtag.php",header)
     .then((response) => response.json()).then((data) =>{
       updateHashtags(fhash);
     });
 }
+
 function closeView()
 {
   document.getElementById("viewVideo").pause();
