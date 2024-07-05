@@ -5,7 +5,8 @@
   background-color: rgba(20,20,20,0.9);
   position: absolute;
   height: 100%;
-  z-index: 80;
+  z-index: 79;
+  overflow-y: scroll;
 }
 .v_content
 {
@@ -69,4 +70,10 @@
   font-size: 1.5vh;
   color:gray;
   margin-bottom: 2%;
+}
+.v_hider
+{
+  float: left;
+  width: 100%;
+  height: 100%;
 }

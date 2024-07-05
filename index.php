@@ -31,9 +31,7 @@ include("php/ctoken.php");
       <a class="v_info" id="info"></a>
       <div class="v_htlist" id="hashtags" >
       </div>
-      <a class="u_navigate" onclick="closeView()">
-        <i class="fa fa-arrow-left"></i>
-      </a>
+      <div class="v_hider" onclick="closeView()"> </div>
     </div>
     <?php
 
@@ -71,7 +69,7 @@ include("php/ctoken.php");
       echo '
       <a href="index.php?user='.$user.'&token='.TOKEN.'">
         <h1 class="h_cancelsearch">
-         <i class="fa fa-ban"></i> Suche nach #'.USERS[$user].' abbrechen.
+         <i class="fa fa-ban"></i> Suche nach #'.$_GET['search'].' abbrechen.
         </h1>
       </a>
       ';
