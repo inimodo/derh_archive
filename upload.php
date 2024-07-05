@@ -29,7 +29,7 @@ if(!isset($_GET['user']))
       <h1 class="u_text">Hochladen</h1>
       <input class="u_filesel" type="file" name="files[]" multiple="multiple">
 
-      <i style="font-size:10vw;color:gray;" class="fa fa-folder-open"></i>
+      <i style="font-size:6vh;color:gray; float:left;" class="fa fa-folder-open"></i>
       <select onclick="updateUpload()" class="u_foldersel" name="folder" >
         <?php
         $folders = scandir("dynamic_content");
@@ -49,7 +49,7 @@ if(!isset($_GET['user']))
     </form>
 
     <div id="loading" style="display:none;" class="u_form">
-      <i style="float:left; font-size:10vw;color:white;" class="fa fa-cog fa-spin"></i>
+      <i style="float:left; font-size:6vh;color:white;" class="fa fa-cog fa-spin"></i>
       <h1 class="u_text">Hochladen</h1>
       <h1 class="u_infotext" >Bitte habe Gedult! Das kann nun etwas dauern. Der Upload gilt nur als erfolgreich, wenn die "Fertig" Seite sich öffnet. Wenn nicht, hast du mehr als 50MB hochgeladen. </h1>
     </div>

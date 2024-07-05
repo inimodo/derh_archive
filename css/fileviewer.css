@@ -1,28 +1,28 @@
 .f_header_text
 {
   margin: 0;
-  margin-left: 3vw;
+  margin-left: 2vh;
   float: left;
   color: White;
-  font-size: 5vw;
+  font-size: 3vh;
   font-family: "Helvetica";
 }
 .f_filecount
 {
   font-family: "Helvetica";
   color: gray;
-  font-size: 3vw;
+  font-size: 2vh;
   margin-top: 0.5vh;
-  margin-right: 1vw;
+  margin-right: 1vh;
   float: right;
 }
 .f_header_icon
 {
   margin: 0;
-  margin-left: 1vw;
+  margin-left: 1vh;
   float: left;
   color: White;
-  font-size: 6vw;
+  font-size: 3vh;
 }
 .f_folder_header
 {
