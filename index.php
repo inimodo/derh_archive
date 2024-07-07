@@ -19,22 +19,7 @@ include("php/ctoken.php");
     <title>Achiv</title>
   </head>
   <body>
-    <div class="v_container" id="view" style="display:none;" >
-      <div class="v_controller" src="">
-        <div class="v_navelement" onclick="navigate(-1)"></div>
-        <div class="v_navelement" style="margin-left:50%;" onclick="navigate(+1)"></div>
-        <image class="v_content" id="viewImage" alt="">
-        <video class="v_content" style="z-index: 99;" id="viewVideo" controls>
-           <source viewVideoSrctype="video/mp4">
-        </video>
-      </div>
-      <a class="v_info" id="info"></a>
-      <div class="v_htlist" id="hashtags" >
-      </div>
-      <div class="v_hider" onclick="closeView()"> </div>
-    </div>
     <?php
-
     $user = preg_replace('/[^0-9\s]+/u','',$_GET['user']);
     $search = preg_replace('/[^A-Za-z\s]+/u','',$_GET['search']);
     if(!isset($_GET['search']))
@@ -50,37 +35,24 @@ include("php/ctoken.php");
         include("user.php");
         die();
     }
-
     ?>
+
+    <div class="v_container" id="view" style="display:none;" >
+      <?php
+        include("view.php");
+       ?>
+    </div>
 
     <div  class="h_content" id="content">
       <?php
-      include("fileviewer.php");
+      include("content.php");
       ?>
     </div>
+
     <div class="h_header" id="header">
-    <a href="index.php">
-     <img  id="username" class="h_user" alt="<?php echo USERS[$user]; ?>" src="static_content/<?php echo USERS[$user]; ?>.png">
-    </a>
-
-    <?php
-    if(isset($_GET['search']))
-    {
-      echo '
-      <a href="index.php?user='.$user.'&token='.TOKEN.'">
-        <h1 class="h_cancelsearch">
-         <i class="fa fa-ban"></i> Suche nach #'.$_GET['search'].' abbrechen.
-        </h1>
-      </a>
-      ';
-    }
-     ?>
-
-     <a href="upload.php?user=<?php echo $user; ?>&token=<?php echo TOKEN; ?>">
-       <h1 class="h_upload">
-         <i class="fa fa-upload"></i>
-       </h1>
-     </a>
+      <?php
+        include("header.php");
+       ?>
     </div>
 
   </body>

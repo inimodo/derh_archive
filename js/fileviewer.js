@@ -72,9 +72,12 @@ function updateHashtags(fhash)
 
       let uploadby = data[1].toLowerCase();
       uploadby = uploadby.charAt(0).toUpperCase()+uploadby.slice(1);
-      document.getElementById("info").innerHTML = '<i class="fa fa-info"></i> Hochgeladen von '+uploadby+" am "+data[0];
 
-      for (var index = 1; index < data.length; index++)
+      let href = "index.php?user="+url.get("user")+"&search="+data[1]+"&token="+url.get("token");
+      let info = '<i class="fa fa-info"></i> Hochgeladen von <a style="color:gray;" href="'+href+'">'+uploadby+"</a> am "+data[0];
+      document.getElementById("info").innerHTML = info;
+
+      for (var index = 2; index < data.length; index++)
       {
         let div = document.createElement("div");
         div.className = "v_hashtag";

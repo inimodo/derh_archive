@@ -1,7 +1,7 @@
 .f_header_text
 {
   margin: 0;
-  margin-left: 2vh;
+  margin-left: 1vh;
   float: left;
   color: White;
   font-size: 3vh;
@@ -13,13 +13,12 @@
   color: gray;
   font-size: 2vh;
   margin-top: 0.5vh;
-  margin-right: 1vh;
+  margin-right: 2vh;
   float: right;
 }
 .f_header_icon
 {
   margin: 0;
-  margin-left: 1vh;
   float: left;
   color: White;
   font-size: 3vh;
@@ -27,10 +26,10 @@
 .f_folder_header
 {
   margin: 0;
-  margin-left: 1.66%;
+  margin-left: 2vh;
   margin-top: 1vh;
   float: left;
-  width: 96%;
+  width: calc(100% - 1vh);
 }
 .f_folder
 {

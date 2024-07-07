@@ -12,6 +12,7 @@
     float: left;
     font-size: 6vh;
     margin:0px;
+    width: 100%;
 }
 .u_filesel
 {
@@ -56,7 +57,7 @@
   float: left;
   margin:0px;
   font-size:1.5vh;
-  width: 70%;
+  width: 90%;
   color:White;
 }
 .u_statusbox
