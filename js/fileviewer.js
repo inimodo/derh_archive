@@ -23,8 +23,10 @@ function navigate(step)
 function openView(cid,fhash)
 {
   updateHashtags(fhash);
+  updateComments(fhash);
   document.getElementById("viewImage").alt = cid;
   document.getElementById("view").style.display = "block";
+  document.getElementById("cupload").onclick = (() =>{ addComment(fhash);} )
   let tag = document.getElementById(cid+"c").tagName;
   if(tag === "IMG")
   {
@@ -46,7 +48,7 @@ function openView(cid,fhash)
   }
 }
 
-function buildHeader(content)
+function buildHeader(content,contentType)
 {
   var header = {
   method: 'POST',
@@ -125,4 +127,26 @@ function closeView()
 {
   document.getElementById("viewVideo").pause();
   document.getElementById("view").style.display = "none";
+}
+
+function updateComments(fhash)
+{
+  const url = new URLSearchParams(window.location.search);
+  var header = buildHeader({'op':1,'fhash':fhash , 'user':url.get("user"),'token':url.get("token")});
+  fetch("https://ini02.xyz/derh/comments.php",header)
+    .then((response) => response.text()).then((data) =>{
+      document.getElementById("comments").innerHTML=data;
+
+    });
+}
+function addComment(fhash)
+{
+  let text = document.getElementById("cinput").value;
+  const url = new URLSearchParams(window.location.search);
+  var header = buildHeader({'op':0,'fhash':fhash ,'text':text , 'user':url.get("user"),'token':url.get("token")});
+  fetch("https://ini02.xyz/derh/comments.php",header)
+    .then((response) => response.text()).then((data) =>{
+      updateComments(fhash);
+      document.getElementById("cinput").value = "";
+    });
 }

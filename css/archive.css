@@ -1,6 +1,7 @@
 html
 {
   background-color: rgb(20 20 20);
+  background: linear-gradient(223deg, rgba(22, 22, 22, 1) 50%, rgb(95 29 29) 100%);
 }
 
 body

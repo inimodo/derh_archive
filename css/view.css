@@ -2,7 +2,7 @@
 {
   float: left;
   width: 100%;
-  background-color: rgba(20,20,20,0.9);
+  background-color: rgb(12 12 12 / 79%);
   position: absolute;
   height: 100%;
   z-index: 79;
@@ -15,6 +15,7 @@
   width: 80%;
   margin: 10%;
   margin-bottom: 0;
+  border-radius: 1vh;
 }
 .v_htlist
 {
@@ -24,20 +25,18 @@
 }
 .v_hashtag
 {
-  background-color: rgb(20,20,20);
+  background-color: rgb(22 22 22 / 88%);
   border-radius: 1vh;
   border-color: White;
   border-width: 0.1vh;
-  height: 3.4vh;
+  height: 4.4vh;
   float: left;
 }
 .v_httext
 {
   color: white;
   float: left;
-  margin-top: 0.5vh;
-  margin-left: 1vh;
-  margin-right: 1vh;
+  margin: 1vh;
   font-family: "Helvetica";
   font-size: 2vh;
 }
@@ -76,4 +75,74 @@
   float: left;
   width: 100%;
   height: 100%;
+}
+.v_comment
+{
+  color: White;
+  font-family: "Helvetica";
+  background-color: rgb(22 22 22 / 88%);
+  border-radius: 1vh;
+  width: 100%;
+  float: left;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+.v_cicon
+{
+  float: left;
+  width: 4vh;
+  margin: 2vh;
+  margin-right: 0;
+  border-radius: 3vh;
+  margin-bottom: 1vh;
+}
+.v_cauthor
+{
+  float: left;
+  font-size: 2vh;
+  margin-left: 1vh;
+  margin-top: 3vh;
+}
+.v_ctext
+{
+  float: left;
+  width: 95%;
+  margin: 2vh;
+  margin-top:0;
+  font-size: 1.8vh;
+  word-wrap: break-word;
+}
+.v_cinput
+{
+  float: left;
+  width: 80%;
+  margin: 1vh;
+  font-size: 1.5vh;
+  color:White;
+  background-color: rgba(22, 22, 22, 1);
+  border: solid;
+  border-width: 0.2vh;
+  border-color: white;
+}
+.v_cupload
+{
+  float: right;
+  margin: 2vw;
+  font-size: 3vh;
+  margin-left: 0;
+}
+.v_cuploadinfo
+{
+  float: left;
+  font-size: 1.5vh;
+  margin: 1vh;
+  margin-top: 0;
+  color: gray;
+}
+.v_cheader
+{
+  float: left;
+  font-size: 2vh;
+  margin-left: 1vh;
+  margin-top: 1vh;
 }
