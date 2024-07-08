@@ -95,10 +95,12 @@ function upload($fileName,$tempFileName)
     <meta charset="utf-8">
     <link href="css/archive.css" rel="stylesheet" type="text/css">
     <link href="css/upload.css" rel="stylesheet" type="text/css">
-
+    <link href="font/font.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/svg+xml" href="./icon.svg">
+    <meta name="theme-color" content="#161616">
+    <script src="https://kit.fontawesome.com/a83a158402.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Hochladen</title>
+    <title>Fertig</title>
   </head>
   <body>
     <div class="u_form" >
@@ -135,6 +137,9 @@ function upload($fileName,$tempFileName)
         printStatus($status,$_FILES["files"]["name"][$fi]);
       }
       ?>
+      <a style="bottom: 2.5vh;right: 10.5vh;" class="u_navigate" href="upload.php?user=<?php echo $user ?>&token=<?php echo TOKEN; ?>">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+      </a>
       <a class="u_navigate" href="index.php?user=<?php echo $user ?>&token=<?php echo TOKEN; ?>">
         <i class="fa fa-arrow-left"></i>
       </a>

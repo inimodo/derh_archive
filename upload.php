@@ -19,8 +19,11 @@ if(!isset($_GET['user']))
     <meta charset="utf-8">
     <link href="css/archive.css" rel="stylesheet" type="text/css">
     <link href="css/upload.css" rel="stylesheet" type="text/css">
+    <link href="font/font.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/a83a158402.js" crossorigin="anonymous"></script>
     <script language="javascript" type="text/javascript" src="js/upload.js"></script>
     <link rel="icon" type="image/svg+xml" href="./icon.svg">
+    <meta name="theme-color" content="#161616">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Hochladen</title>
   </head>
@@ -30,6 +33,7 @@ if(!isset($_GET['user']))
       <input class="u_filesel" type="file" name="files[]" multiple="multiple">
 
       <i style="font-size:6vh;color:gray; float:left;" class="fa fa-folder-open"></i>
+
       <select onclick="updateUpload()" class="u_foldersel" name="folder" >
         <?php
         $folders = scandir("dynamic_content");
@@ -40,9 +44,20 @@ if(!isset($_GET['user']))
          ?>
          <option class="u_folder" selected="selected" value="-1"> Kein Ordner ausgewählt</option>
       </select>
+      <h1 class="u_infotext " id="alert" style ="color: red;">
+        Bitte wähle den richtigen Ordner aus!
+      </h1>
+
+      <i style="font-size:6vh; float:left;color: #8f3030; margin-top: 5vh;" class="fa-solid fa-triangle-exclamation"></i>
+      <h1 class="u_infotext " style ="color: #cfacac; margin-bottom: 5vh;">
+        Lade Videos und Fotos getrennt hoch! Lade längere Videos einzeln hoch, da per upload nur 50MB hochgeladen werden können. Bitte lade nur deine eigenen Fotos und Videos hoch.
+      </h1>
+
+
       <h1 class="u_infotext ">max. 50MB und max. 20 Dateien</h1>
-      <input class="u_upload"onclick="showLoadingscreen()" id="upload" type="submit" value="Hochladen" name="submit" disabled>
-      <h1 class="u_infotext " style ="color:gray">Tipp: Lade Videos und Fotos getrennt hoch! Noch besser ist Videos einzeln hochzuladen, da per upload nur 50MB hochgeladen werden können.</h1>
+      <input class="u_upload" onclick="showLoadingscreen()" id="upload" type="submit" value="Hochladen" name="submit" disabled>
+
+
       <a class="u_navigate" href="index.php?user=<?php echo $user ?>&token=<?php echo TOKEN; ?>">
         <i class="fa fa-arrow-left"></i>
       </a>

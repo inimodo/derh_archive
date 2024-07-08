@@ -14,7 +14,7 @@ $fhash = explode(".",preg_replace('/[^0-9A-Za-z.\s]+/u','',$_POST['fhash']));
 $op = preg_replace('/[^0-9\s]+/u','',$_POST['op']);
 $folders = scandir("./dynamic_content/");
 $hashpath = "./dynamic_content/".$folders[intval($fhash[0])]."/".$fhash[1];
-if(!file_exists($hashpath.".json"))die("[3]");
+if(!file_exists($hashpath.".json"))die("[]");
 
 if($op == 0 )
 {
@@ -45,7 +45,7 @@ if($op == 0 )
 
 if($op == 1)
 {
-  if(!file_exists($hashpath.".c.json"))die("[]");
+  if(!file_exists($hashpath.".c.json"))die("");
   $comFile = fopen($hashpath.".c.json","r");
   $commentsRaw = fread($comFile,filesize($hashpath.".c.json"));
   fclose($comFile);

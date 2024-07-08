@@ -12,9 +12,12 @@ include("php/ctoken.php");
     <link href="css/archive.css" rel="stylesheet" type="text/css">
     <link href="css/header.css" rel="stylesheet" type="text/css">
     <link href="css/view.css" rel="stylesheet" type="text/css">
+    <link href="font/font.css" rel="stylesheet" type="text/css">
+    <meta name="theme-color" content="#161616">
     <link href="css/fileviewer.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/svg+xml" href="./icon.svg">
     <script language="javascript" type="text/javascript" src="js/fileviewer.js"></script>
+    <script src="https://kit.fontawesome.com/a83a158402.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Achiv</title>
   </head>

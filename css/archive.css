@@ -1,7 +1,9 @@
+
 html
 {
+  font-weight: 300;
   background-color: rgb(20 20 20);
-  background: linear-gradient(223deg, rgba(22, 22, 22, 1) 50%, rgb(95 29 29) 100%);
+  background: linear-gradient(222deg, rgb(10 15 43) 0%, rgb(22 22 22) 49%, rgb(69 22 22) 100%);
 }
 
 body

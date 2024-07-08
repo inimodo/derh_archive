@@ -15,6 +15,6 @@ if(isset($_GET['search']))
  ?>
 <a href="upload.php?user=<?php echo $user; ?>&token=<?php echo TOKEN; ?>">
  <h1 class="h_upload">
-   <i class="fa fa-upload"></i>
+   <i class="fa-solid fa-cloud-arrow-up"></i>
  </h1>
 </a>

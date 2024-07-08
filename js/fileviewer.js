@@ -24,6 +24,10 @@ function openView(cid,fhash)
 {
   updateHashtags(fhash);
   updateComments(fhash);
+
+
+  document.getElementById("content").style.filter = "blur(12px)";
+  document.getElementById("header").style.filter = "blur(12px)";
   document.getElementById("viewImage").alt = cid;
   document.getElementById("view").style.display = "block";
   document.getElementById("cupload").onclick = (() =>{ addComment(fhash);} )
@@ -76,8 +80,13 @@ function updateHashtags(fhash)
       uploadby = uploadby.charAt(0).toUpperCase()+uploadby.slice(1);
 
       let href = "index.php?user="+url.get("user")+"&search="+data[1]+"&token="+url.get("token");
-      let info = '<i class="fa fa-info"></i> Hochgeladen von <a style="color:gray;" href="'+href+'">'+uploadby+"</a> am "+data[0];
+      let info = '<i class="fa fa-info"></i> Hochgeladen von <a style="color:white;" href="'+href+'">'+uploadby+"</a> am "+data[0];
       document.getElementById("info").innerHTML = info;
+
+      let header = document.createElement("a");
+      header.className="v_cheader";
+      header.textContent="Im Bild";
+      document.getElementById("hashtags").appendChild(header);
 
       for (var index = 2; index < data.length; index++)
       {
@@ -125,6 +134,8 @@ function addUserHashtag(fhash)
 
 function closeView()
 {
+  document.getElementById("content").style.filter = "blur(0px)";
+  document.getElementById("header").style.filter = "blur(0px)";
   document.getElementById("viewVideo").pause();
   document.getElementById("view").style.display = "none";
 }

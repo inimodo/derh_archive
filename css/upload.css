@@ -5,7 +5,8 @@
   float: left;
   color: White;
   margin-top: 8vh;
-  font-family: "Helvetica";
+  font-family: "Roboto";
+  font-weight: 300;
 }
 .u_text
 {
@@ -13,6 +14,7 @@
     font-size: 6vh;
     margin:0px;
     width: 100%;
+    font-weight: 300;
 }
 .u_filesel
 {
@@ -21,6 +23,7 @@
   font-size: 2vh;
   margin-bottom: 5vh;
   margin-top: 5vh;
+  font-weight: 300;
 
 }
 .u_upload
@@ -35,7 +38,6 @@
   float: left;
   font-size: 2vh;
   width: 100%;
-  margin-bottom: 5vh;
 }
 .u_folder
 {
@@ -59,6 +61,7 @@
   font-size:1.5vh;
   width: 90%;
   color:White;
+  font-weight: 300;
 }
 .u_statusbox
 {
@@ -71,6 +74,7 @@
   width: 100%;
   color: White;
   margin-top: 1vh;
-  font-family: "Helvetica";
+  font-family: "Roboto";
+  font-weight: 300;
   font-size: 1.8vh;
 }

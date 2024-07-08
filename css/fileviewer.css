@@ -5,11 +5,13 @@
   float: left;
   color: White;
   font-size: 3vh;
-  font-family: "Helvetica";
+  font-family: "Roboto";
+  font-weight: 300;
 }
 .f_filecount
 {
-  font-family: "Helvetica";
+  font-family: "Roboto";
+  font-weight: 300;
   color: gray;
   font-size: 2vh;
   margin-top: 0.5vh;
@@ -21,7 +23,8 @@
   margin: 0;
   float: left;
   color: White;
-  font-size: 3vh;
+  margin-top: 0.8vh;
+  font-size: 2.5vh;
 }
 .f_folder_header
 {
