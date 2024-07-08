@@ -9,12 +9,6 @@ if(!isset($_POST['fhash']) || !isset($_POST['op']))
   die("[]");
 }
 
-$request_headers = getallheaders();
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS' )
-{
-  die("[]");
-}
-
 $_POST = json_decode(file_get_contents('php://input'), true);
 $fhash = explode(".",preg_replace('/[^0-9A-Za-z.\s]+/u','',$_POST['fhash']));
 $op = preg_replace('/[^0-9\s]+/u','',$_POST['op']);
@@ -24,7 +18,7 @@ if(!file_exists($hashpath.".json"))die("[3]");
 
 if($op == 0 )
 {
-  $text = preg_replace('/[^A-Za-z0-9äöü\s]+/u','',$_POST['text']);
+  $text = preg_replace('/[^A-Za-z0-9äöü.!?,\s]+/u','',$_POST['text']);
   $user = preg_replace('/[^0-9\s]+/u','',$_POST['user']);
   if($text == "")die("[]");
 

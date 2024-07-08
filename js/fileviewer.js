@@ -106,7 +106,7 @@ function updateHashtags(fhash)
         a.className="v_httext";
         a.appendChild(i);
         a.innerHTML  += "Mich hinzufügen!";
-        a.style.color = "gray";
+        a.style.color = "white";
         a.onclick= (()=>{ addUserHashtag(fhash); });
         document.getElementById("hashtags").appendChild(div).appendChild(a);
       }
@@ -131,12 +131,12 @@ function closeView()
 
 function updateComments(fhash)
 {
+  document.getElementById("comments").innerHTML = "";
   const url = new URLSearchParams(window.location.search);
   var header = buildHeader({'op':1,'fhash':fhash , 'user':url.get("user"),'token':url.get("token")});
   fetch("https://ini02.xyz/derh/comments.php",header)
     .then((response) => response.text()).then((data) =>{
       document.getElementById("comments").innerHTML=data;
-
     });
 }
 function addComment(fhash)
