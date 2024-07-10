@@ -23,6 +23,7 @@
   height: 90%;
   overflow-y: scroll;
   float: left;
+  overflow-x: clip;
 }
 .h_cancelsearch
 {

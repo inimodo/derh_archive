@@ -8,24 +8,38 @@
   z-index: 79;
   overflow-y: scroll;
 }
+.v_viewermenu
+{
+  float: left;
+  width: 90%;
+  margin-left: 5%;
+}
+@media (min-width: 1000px) {
+  .v_viewermenu
+  {
+    float: left;
+    width: 40%;
+    margin-left: 30%;
+  }
+}
 .v_content
 {
   position: relative;
   float: left;
-  width: 90%;
-  margin: 5%;
-  margin-bottom: 0;
+  width: 100%;
   border-radius: 1vh;
+  margin-top: 3vh
 }
+
 .v_htlist
 {
     float: left;
-    width: 90%;
-    margin: 5%;
+    width: 100%;
     margin-top: 1vh;
     background-color: rgb(22 22 22 / 50%);
     border-radius: 1vh;
 }
+
 .v_hashtag
 {
   background-color: rgb(22 22 22 / 88%);
@@ -33,7 +47,7 @@
   border-color: White;
   border-width: 0.1vh;
   float: left;
-  margin: 1vh;
+  margin: 2.5%;
   margin-top: 0;
 }
 .v_httext
@@ -75,8 +89,7 @@
 .v_infoblock
 {
   float: left;
-  width: 90%;
-  margin: 5%;
+  width: 100%;
   margin-top: 1vh;
   background-color: rgb(22 22 22 / 50%);
   border-radius: 1vh;
@@ -97,7 +110,7 @@
   float: left;
   margin-bottom: 2.5%;
   margin-left: 2.5%;
-  width: 76vw;
+  width: 95%;
 }
 .v_cicon
 {

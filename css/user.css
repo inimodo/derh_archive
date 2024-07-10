@@ -5,6 +5,15 @@
   margin-left: 25%;
   margin-top: 6vh;
 }
+@media (min-width: 1000px) {
+  .u_content
+  {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 17vh;
+    
+  }
+}
 .u_selbutton
 {
   float: left;
@@ -13,6 +22,14 @@
   margin-top: 10%;
   box-shadow: 7px 7px 20px 7px rgb(255 255 255 / 17%);
   border-radius: 20px;
+}
+@media (min-width: 1000px) {
+  .u_selbutton
+  {
+    width: 14%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
 }
 .u_selbutton_link
 {

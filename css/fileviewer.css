@@ -53,6 +53,12 @@
   overflow: hidden;
   border-radius: 1vh;
 }
+@media (min-width: 1000px) {
+  .f_content_box
+  {
+    width: 45%;
+  }
+}
 .f_colmn
 {
   float: left;

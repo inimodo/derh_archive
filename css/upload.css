@@ -8,6 +8,21 @@
   font-family: "Roboto";
   font-weight: 300;
 }
+
+@media (min-width: 1000px) {
+  .u_form
+  {
+    width:30%;
+    margin-left:40%;
+    float: left;
+    color: White;
+    margin-top: 8vh;
+    font-family: "Roboto";
+    font-weight: 300;
+  }
+}
+
+
 .u_text
 {
     float: left;

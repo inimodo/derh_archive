@@ -18,7 +18,8 @@ if(!file_exists($hashpath.".json"))die("[]");
 
 if($op == 0 )
 {
-  $text = preg_replace('/[^A-Za-z0-9äöü.!?,\s]+/u','',$_POST['text']);
+  $text = preg_replace('/[^A-Za-z0-9äöü.!?,#()*\s]+/u','',$_POST['text']);
+  $text = str_replace(array("\r", "\n"), ']n', $text);
   $user = preg_replace('/[^0-9\s]+/u','',$_POST['user']);
   if($text == "")die("[]");
 
@@ -50,14 +51,13 @@ if($op == 1)
   $commentsRaw = fread($comFile,filesize($hashpath.".c.json"));
   fclose($comFile);
   $comments = json_decode($commentsRaw);
-
   for ($index=0; $index < count($comments) ; $index++)
   {
     echo '
     <div class="v_comment">
       <img src="static_content/'.USERS[$comments[$index]->user].'.png" class="v_cicon">
       <a class="v_cauthor">'.USERS[$comments[$index]->user].'</a>
-      <a class="v_ctext">'.$comments[$index]->text.'</a>
+      <a class="v_ctext">'.str_replace(']n', '<br>' , $comments[$index]->text).'</a>
       <a class="v_cuploadinfo">'.$comments[$index]->date.'</a>
     </div>
     ';
