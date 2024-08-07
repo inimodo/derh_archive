@@ -50,11 +50,11 @@ if(!isset($_GET['user']))
 
       <i style="font-size:6vh; float:left;color: #8f3030; margin-top: 5vh;" class="fa-solid fa-triangle-exclamation"></i>
       <h1 class="u_infotext " style ="color: #cfacac; margin-bottom: 5vh;">
-        Lade Videos und Fotos getrennt hoch! Lade längere Videos einzeln hoch, da per upload nur 50MB hochgeladen werden können. Bitte lade nur deine eigenen Fotos und Videos hoch.
+        Lade Videos und Fotos getrennt hoch! Lade Videos die länger als 15s sind am besten einzeln hoch. Bitte lade nur deine eigenen Fotos und Videos hoch, und vermeide bitte gleich aussehende Bilder.
       </h1>
 
 
-      <h1 class="u_infotext ">max. 50MB und max. 20 Dateien</h1>
+      <h1 class="u_infotext ">max. 1Gb</h1>
       <input class="u_upload" onclick="showLoadingscreen()" id="upload" type="submit" value="Hochladen" name="submit" disabled>
 
 
@@ -66,7 +66,7 @@ if(!isset($_GET['user']))
     <div id="loading" style="display:none;" class="u_form">
       <i style="float:left; font-size:6vh;color:white;" class="fa fa-cog fa-spin"></i>
       <h1 class="u_text">Hochladen</h1>
-      <h1 class="u_infotext" >Bitte habe Gedult! Das kann nun etwas dauern. Der Upload gilt nur als erfolgreich, wenn die "Fertig" Seite sich öffnet. Wenn nicht, hast du mehr als 50MB hochgeladen. </h1>
+      <h1 class="u_infotext" >Bitte habe Geduld! Das kann nun etwas dauern. Der Upload gilt nur als erfolgreich, wenn sich die "Fertig" Seite  öffnet. Sollte der Upload länger als 10min dauern, kannst du ihn abbrechen.</h1>
     </div>
 
   </body>

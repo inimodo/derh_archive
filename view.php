@@ -8,6 +8,7 @@
     </video>
   </div>
   <div class="v_infoblock">
+    <a class="v_delete" onclick="deleteContent()" id="delete"><i class="fa-solid fa-trash"></i></a>
     <a class="v_info" id="info"></a>
   </div>
 

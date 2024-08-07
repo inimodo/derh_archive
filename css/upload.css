@@ -13,7 +13,7 @@
   .u_form
   {
     width:30%;
-    margin-left:40%;
+    margin-left:35%;
     float: left;
     color: White;
     margin-top: 8vh;
@@ -21,7 +21,6 @@
     font-weight: 300;
   }
 }
-
 
 .u_text
 {
@@ -74,7 +73,7 @@
   float: left;
   margin:0px;
   font-size:1.5vh;
-  width: 90%;
+  width: 100%;
   color:White;
   font-weight: 300;
 }

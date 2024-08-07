@@ -20,6 +20,22 @@ function navigate(step)
   openView(cid,fhash);
 }
 
+function  deleteContentWarning(filename,folder)
+{
+  document.getElementById("delete").innerHTML = "BIST DU DIR SICHER?";
+  document.getElementById("delete").onclick = (() =>{});
+  setTimeout(function() {
+    document.getElementById("delete").innerHTML = '<i class="fa-solid fa-trash">';
+    document.getElementById("delete").href = "";
+  }, 5000);
+  setTimeout(function() {
+    const url = new URLSearchParams(window.location.search);
+    let href = "delete.php?user="+url.get("user")+"&token="+url.get("token")+"&folder="+folder+"&filename="+filename;
+    document.getElementById("delete").href = href;
+  }, 500);
+
+}
+
 function openView(cid,fhash)
 {
   updateHashtags(fhash);
@@ -31,16 +47,19 @@ function openView(cid,fhash)
   document.getElementById("viewImage").alt = cid;
   document.getElementById("view").style.display = "block";
   document.getElementById("cupload").onclick = (() =>{ addComment(fhash);} )
+
+  let src = "";
   let tag = document.getElementById(cid+"c").tagName;
   if(tag === "IMG")
   {
-    document.getElementById("viewImage").src = document.getElementById(cid+"c").src;
+    src = document.getElementById(cid+"c").src
+    document.getElementById("viewImage").src = src;
     document.getElementById("viewImage").style.display = "block";
     document.getElementById("viewVideo").style.display = "none";
   }
   if(tag === "VIDEO")
   {
-    let src = document.getElementById(cid+"c").getElementsByTagName('SOURCE')[0].src;
+    src = document.getElementById(cid+"c").getElementsByTagName('SOURCE')[0].src;
     document.getElementById(cid+"c").pause();
 
     document.getElementById("viewVideo").load();
@@ -50,6 +69,11 @@ function openView(cid,fhash)
     document.getElementById("viewImage").style.display = "none";
     document.getElementById("viewVideo").style.display = "block";
   }
+  document.getElementById("delete").onclick = (() =>{
+    srcSplit = src.split("/");
+    filename = srcSplit[srcSplit.length-1];
+    deleteContentWarning(filename,fhash.split('.')[0]);
+  } )
 }
 
 function buildHeader(content,contentType)
@@ -71,7 +95,7 @@ function updateHashtags(fhash)
 {
   const url = new URLSearchParams(window.location.search);
   var header = buildHeader({'op':0,'fhash':fhash ,'token':url.get("token")});
-  fetch("https://ini02.xyz/derh/hashtag.php",header)
+  fetch("https://ini02.xyz/_derh/hashtag.php",header)
     .then((response) => response.json()).then((data) =>{
       document.getElementById("hashtags").innerHtml='';
       document.getElementById("hashtags").textContent ='';
@@ -81,6 +105,7 @@ function updateHashtags(fhash)
 
       let href = "index.php?user="+url.get("user")+"&search="+data[1]+"&token="+url.get("token");
       let info = '<i class="fa fa-info"></i> Hochgeladen von <a style="color:white;" href="'+href+'">'+uploadby+"</a> am "+data[0];
+
       document.getElementById("info").innerHTML = info;
 
       let header = document.createElement("a");
@@ -117,6 +142,7 @@ function updateHashtags(fhash)
         a.innerHTML  += "Mich hinzufügen!";
         a.style.color = "white";
         a.onclick= (()=>{ addUserHashtag(fhash); });
+        a.id = "addht";
         document.getElementById("hashtags").appendChild(div).appendChild(a);
       }
     });
@@ -124,9 +150,10 @@ function updateHashtags(fhash)
 
 function addUserHashtag(fhash)
 {
+  document.getElementById('addht').style.display = "none";
   const url = new URLSearchParams(window.location.search);
   var header = buildHeader({'op':1,'fhash':fhash , 'user':url.get("user"),'token':url.get("token")});
-  fetch("https://ini02.xyz/derh/hashtag.php",header)
+  fetch("https://ini02.xyz/_derh/hashtag.php",header)
     .then((response) => response.json()).then((data) =>{
       updateHashtags(fhash);
     });
@@ -145,7 +172,7 @@ function updateComments(fhash)
   document.getElementById("comments").innerHTML = "";
   const url = new URLSearchParams(window.location.search);
   var header = buildHeader({'op':1,'fhash':fhash , 'user':url.get("user"),'token':url.get("token")});
-  fetch("https://ini02.xyz/derh/comments.php",header)
+  fetch("https://ini02.xyz/_derh/comments.php",header)
     .then((response) => response.text()).then((data) =>{
       document.getElementById("comments").innerHTML=data;
     });
@@ -155,7 +182,7 @@ function addComment(fhash)
   let text = document.getElementById("cinput").value;
   const url = new URLSearchParams(window.location.search);
   var header = buildHeader({'op':0,'fhash':fhash ,'text':text , 'user':url.get("user"),'token':url.get("token")});
-  fetch("https://ini02.xyz/derh/comments.php",header)
+  fetch("https://ini02.xyz/_derh/comments.php",header)
     .then((response) => response.text()).then((data) =>{
       updateComments(fhash);
       document.getElementById("cinput").value = "";
